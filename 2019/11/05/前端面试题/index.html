@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="伦苏的小窝">
 <meta property="og:description" content="HTML问题 HTML5语义化 什么是语义化？就是用合理、正确的标签来展示内容，比如h1~h6定义标题。  好处易于用户阅读，样式丢失的时候能让页面呈现清晰的结构。有利于SEO，搜索引擎根据标签来确定上下文和各个关键字的权重。方便其他设备解析，如盲人阅读器根据语义渲染网页有利于开发和维护，语义化更具可读性，代码更好维护，与CSS3关系更和谐。 为什么最好把 CSS 的标签放在之间？为什么最好把">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-05T08:57:07.591Z">
+<meta property="og:updated_time" content="2019-11-05T08:58:42.804Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -366,7 +366,7 @@ HTML5语义化
 <p>为了显示更多的内容，大多数的浏览器会把自己的视窗视口扩大，简易的理解，就是让原本320像素的屏幕宽度能够容下980像素甚至更宽的内容（将网页等比例缩小）。</p>
 <p>Viewport属性值<br>width 设置layout viewport 的宽度，为一个正整数，或字符串"width-device"<br>initial-scale 设置页面的初始缩放值，为一个数字，可以带小数<br>minimum-scale 允许用户的最小缩放值，为一个数字，可以带小数<br>maximum-scale 允许用户的最大缩放值，为一个数字，可以带小数<br>height 设置layout viewport 的高度，这个属性对我们并不重要，很少使用<br>user-scalable 是否允许用户进行缩放，值为"no"或"yes", no 代表不允许，yes代表允许这些属性可以同时使用，也可以单独使用或混合使用，多个属性同时使用时用逗号隔开就行了。<br>Reflow和Repaint<br>Reflow<br>当涉及到DOM节点的布局属性发生变化时，就会重新计算该属性，浏览器会重新描绘相应的元素，此过程叫Reflow（回流或重排）。</p>
 <p>Repaint<br>当影响DOM元素可见性的属性发生变化 (如 color) 时, 浏览器会重新描绘相应的元素, 此过程称为Repaint（重绘）。因此重排必然会引起重绘。</p>
-<p>引起Repaint和Reflow的一些操作<br>调整窗口大小<br>字体大小<br>样式表变动<br>元素内容变化，尤其是输入控件<br>CSS伪类激活，在用户交互过程中发生<br>DOM操作，DOM元素增删、修改<br>width, clientWidth, scrollTop等布局宽高的计算<br>Repaint和Reflow是不可避免的，只能说对性能的影响减到最小，给出下面几条建议：<br>避免逐条更改样式。建议集中修改样式，例如操作className。<br>避免频繁操作DOM。创建一个documentFragment或div，在它上面应用所有DOM操作，最后添加到文档里。设置display:none的元素上操作，最后显示出来。<br>避免频繁读取元素几何属性（例如scrollTop）。绝对定位具有复杂动画的元素。<br>绝对定位使它脱离文档流，避免引起父元素及后续元素大量的回流</p>
+<p>引起Repaint和Reflow的一些操作<br>调整窗口大小<br>字体大小<br>样式表变动<br>元素内容变化，尤其是输入控件<br>CSS伪类激活，在用户交互过程中发生<br>DOM操作，DOM元素增删、修改<br>width, clientWidth, scrollTop等布局宽高的计算<br>Repaint和Reflow是不可避免的，只能说对性能的影响减到最小，给出下面几条建议：<br>避免逐条更改样式。建议集中修改样式，例如操作className。<br>避免频繁操作DOM。创建一个documentFragment或div，在它上面应用所有DOM操作，最后添加到文档里。设置display:none的元素上操作，最后显示出来。<br>避免频繁读取元素几何属性（例如scrollTop）。绝对定位具有复杂动画的元素。<br>绝对定位使它脱离文档流，避免引起父元素及后续元素大量的回流<br><br></p>
 
       
     </div>
