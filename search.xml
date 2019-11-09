@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>配置统计数据出现的问题</title>
+    <url>/2019/11/09/%E9%85%8D%E7%BD%AE%E7%BB%9F%E8%AE%A1%E6%95%B0%E6%8D%AE%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="hexo配置统计数据出现的问题-不蒜子"><a href="#hexo配置统计数据出现的问题-不蒜子" class="headerlink" title="hexo配置统计数据出现的问题-不蒜子"></a>hexo配置统计数据出现的问题-不蒜子</h1><br>
+在引用不蒜子作为静态网站的博客的统计功能的时候发现无法显示，在查阅了相关的资料之后发现，由于域名地址的更换，需要重新配置。
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">与客服沟通数次无果，即使我提出为此付费也不行，只能更换域名到『busuanzi.ibruce.info』！</span><br><span class="line">因我是最早的一批七牛用户，为七牛至少带来了数百个邀请用户，很痛心，很无奈！</span><br><span class="line">各位继续使用不蒜子提供的服务，只需把原有的：</span><br><span class="line">&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">域名改一下即可：</span><br><span class="line">&lt;script async src=&quot;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">只需要修改该js域名，其他均未改变。若有疑问，可以加入不蒜子交流QQ群：`419260983`，</span><br><span class="line">对您带来的不便，非常抱歉！！！还是那句话，不蒜子不会中断服务！！！！</span><br></pre></td></tr></table></figure>
+<br>
+修改NexT的配置的方法如下：
+<p>
+
+<p><code>&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>修改为:</p>
+<p><code>&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>测试效果成功。</p>
+]]></content>
+      <tags>
+        <tag>编程</tag>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>前端面试题</title>
     <url>/2019/11/05/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
     <content><![CDATA[<h1 id="HTML问题"><a href="#HTML问题" class="headerlink" title="HTML问题"></a>HTML问题</h1><h2 id="HTML5语义化"><a href="#HTML5语义化" class="headerlink" title="HTML5语义化"></a>HTML5语义化</h2><p>什么是语义化？就是用合理、正确的标签来展示内容，比如h1~h6定义标题。</p>
