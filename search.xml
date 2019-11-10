@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>vue.js关于mvvm和mvc</title>
+    <url>/2019/11/10/vue-js%E5%85%B3%E4%BA%8Emvvm%E5%92%8Cmvc/</url>
+    <content><![CDATA[<h1 id="1-在看mvc和mvvm的区别之前我们来看一下前端的发展历史"><a href="#1-在看mvc和mvvm的区别之前我们来看一下前端的发展历史" class="headerlink" title="1.在看mvc和mvvm的区别之前我们来看一下前端的发展历史"></a>1.在看mvc和mvvm的区别之前我们来看一下前端的发展历史</h1><p>最早的HTML页面是完全静态的网页，它们是预先编写好的存放在Web服务器上的html文件。浏览器请求某个URL时，Web服务器把对应的html文件扔给浏览器，就可以显示html文件的内容了。</p>
+<p>有了JavaScript后，浏览器就可以运行JavaScript，然后，对页面进行一些修改。JavaScript还可以通过修改HTML的DOM结构和CSS来实现一些动画效果，而这些功能没法通过服务器完成，必须在浏览器实现。</p>
+<p>用JavaScript在浏览器中操作HTML，经历了若干发展阶段：<br>第一阶段，直接用JavaScript操作DOM节点，使用浏览器提供的原生API：<br>第二阶段，由于原生API不好用，还要考虑浏览器兼容性，jQuery横空出世，以简洁的API迅速俘获了前端开发者的芳心：<br>第三阶段，MVC模式，需要服务器端配合，JavaScript可以在前端修改服务器渲染后的数据。<br>现在，随着前端页面越来越复杂，用户对于交互性要求也越来越高，想要写出Gmail这样的页面，仅仅用jQuery是远远不够的。MVVM模型应运而生。</p>
+<p>MVVM最早由微软提出来，它借鉴了桌面应用程序的MVC思想，在前端页面中，把Model用纯JavaScript对象表示，View负责显示，两者做到了最大限度的分离。</p>
+<h1 id="2-现在让我们从MVC开始"><a href="#2-现在让我们从MVC开始" class="headerlink" title="2.现在让我们从MVC开始"></a>2.现在让我们从MVC开始</h1><p>几乎所有的App都只干这么一件事：将数据展示给用户看，并处理用户对界面的操作。<br>MVC的思想：一句话描述就是Controller负责将Model的数据用View显示出来，换句话说就是在Controller里面把Model的数据赋值给View</p>
+<h2 id="M、V、C"><a href="#M、V、C" class="headerlink" title="M、V、C"></a>M、V、C</h2><h3 id="Model（模型）：是应用程序中用于处理应用程序数据逻辑的部分。"><a href="#Model（模型）：是应用程序中用于处理应用程序数据逻辑的部分。" class="headerlink" title="Model（模型）：是应用程序中用于处理应用程序数据逻辑的部分。"></a>Model（模型）：是应用程序中用于处理应用程序数据逻辑的部分。</h3><p>　　　　通常模型对象负责在数据库中存取数据。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">在代码中体现为数据管理者，Model负责对数据进行获取及存放。</span><br><span class="line">数据不可能凭空生成的，要么是从服务器上面获取到的数据，要么是本地数据库中的数据，</span><br><span class="line">也有可能是用户在UI上填写的表单即将上传到服务器上面存放，所以需要有数据来源。</span><br><span class="line">既然Model是数据管理者，则自然由它来负责获取数据。</span><br><span class="line">Controller不需要关心Model是如何拿到数据的，只管调用就行了。</span><br><span class="line">数据存放的地方是在Model，而使用数据的地方是在Controller，</span><br><span class="line">所以Model应该提供接口供controller访问其存放的数据（通常通过.h里面的只读属性）</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="View（视图）：是应用程序中处理数据显示的部分。"><a href="#View（视图）：是应用程序中处理数据显示的部分。" class="headerlink" title="View（视图）：是应用程序中处理数据显示的部分。"></a>View（视图）：是应用程序中处理数据显示的部分。</h3><p>　　　　通常视图是依据模型数据创建的。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">它们有一部分是我们UI定死的，也就是不会根据数据来更新显示的，</span><br><span class="line">比如一些Logo图片啊，这里有个按钮啊，那里有个输入框啊，一些显示特定内容的label啊等等；</span><br><span class="line">有一部分是会根据数据来显示内容的，比如tableView来显示好友列表啊，</span><br><span class="line">这个tableView的显示内容肯定是根据数据来显示的。</span><br><span class="line">我们使用MVC解决问题的时候，通常是解决这些根据数据来显示内容的视图。</span><br></pre></td></tr></table></figure>
+
+<h3 id="Controller（控制器）：是应用程序中处理用户交互的部分。"><a href="#Controller（控制器）：是应用程序中处理用户交互的部分。" class="headerlink" title="Controller（控制器）：是应用程序中处理用户交互的部分。"></a>Controller（控制器）：是应用程序中处理用户交互的部分。</h3><p>　　　　通常控制器负责从视图读取数据，控制用户输入，并向模型发送数据。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">也就是在Controller里面把Model的数据赋值给View来显示</span><br><span class="line">（或者是View接收用户输入的数据然后由Controller把这些数据传给Model来保存到本地或者上传到</span><br><span class="line">服务器）。</span><br></pre></td></tr></table></figure>
+
+<h2 id="综合以上内容，实际上你应该可以通过面向对象的基本思想来推导出controller出现的原因：我们所有的App都是界面和数据的交互，所以需要类来进行界面的绘制，于是出现了View，需要类来管理数据于是出现了Model。我们设计的View应该能显示任意的内容比如页面中显示的文字应该是任意的而不只是某个特定Model的内容，所以我们不应该在View的实现中去写和Model相关的任何代码，如果这样做了，那么View的可扩展性就相当低了。而Model只是负责处理数据的，它根本不知道数据到时候会拿去干啥，可能拿去作为算法噼里啪啦去了，可能拿去显示给用户了，它既然无法接收用户的交互，它就不应该去管和视图相关的任何信息，所以Model中不应该写任何View相关代码。然而我们的数据和界面应该同步，也就是一定要有个地方要把Model的数据赋值给View，而Model内部和View的内部都不可能去写这样的代码，所以只能新创造一个类出来了，取名为Controller。"><a href="#综合以上内容，实际上你应该可以通过面向对象的基本思想来推导出controller出现的原因：我们所有的App都是界面和数据的交互，所以需要类来进行界面的绘制，于是出现了View，需要类来管理数据于是出现了Model。我们设计的View应该能显示任意的内容比如页面中显示的文字应该是任意的而不只是某个特定Model的内容，所以我们不应该在View的实现中去写和Model相关的任何代码，如果这样做了，那么View的可扩展性就相当低了。而Model只是负责处理数据的，它根本不知道数据到时候会拿去干啥，可能拿去作为算法噼里啪啦去了，可能拿去显示给用户了，它既然无法接收用户的交互，它就不应该去管和视图相关的任何信息，所以Model中不应该写任何View相关代码。然而我们的数据和界面应该同步，也就是一定要有个地方要把Model的数据赋值给View，而Model内部和View的内部都不可能去写这样的代码，所以只能新创造一个类出来了，取名为Controller。" class="headerlink" title="综合以上内容，实际上你应该可以通过面向对象的基本思想来推导出controller出现的原因：我们所有的App都是界面和数据的交互，所以需要类来进行界面的绘制，于是出现了View，需要类来管理数据于是出现了Model。我们设计的View应该能显示任意的内容比如页面中显示的文字应该是任意的而不只是某个特定Model的内容，所以我们不应该在View的实现中去写和Model相关的任何代码，如果这样做了，那么View的可扩展性就相当低了。而Model只是负责处理数据的，它根本不知道数据到时候会拿去干啥，可能拿去作为算法噼里啪啦去了，可能拿去显示给用户了，它既然无法接收用户的交互，它就不应该去管和视图相关的任何信息，所以Model中不应该写任何View相关代码。然而我们的数据和界面应该同步，也就是一定要有个地方要把Model的数据赋值给View，而Model内部和View的内部都不可能去写这样的代码，所以只能新创造一个类出来了，取名为Controller。"></a>综合以上内容，实际上你应该可以通过面向对象的基本思想来推导出controller出现的原因：我们所有的App都是界面和数据的交互，所以需要类来进行界面的绘制，于是出现了View，需要类来管理数据于是出现了Model。我们设计的View应该能显示任意的内容比如页面中显示的文字应该是任意的而不只是某个特定Model的内容，所以我们不应该在View的实现中去写和Model相关的任何代码，如果这样做了，那么View的可扩展性就相当低了。而Model只是负责处理数据的，它根本不知道数据到时候会拿去干啥，可能拿去作为算法噼里啪啦去了，可能拿去显示给用户了，它既然无法接收用户的交互，它就不应该去管和视图相关的任何信息，所以Model中不应该写任何View相关代码。然而我们的数据和界面应该同步，也就是一定要有个地方要把Model的数据赋值给View，而Model内部和View的内部都不可能去写这样的代码，所以只能新创造一个类出来了，取名为Controller。</h2><p>
+<img src="https://upload-images.jianshu.io/upload_images/7770244-f4fc955f1488299a.png?imageMogr2/auto-orient/strip|imageView2/2/w/1127/format/webp">
+]]></content>
+  </entry>
+  <entry>
     <title>配置统计数据出现的问题</title>
     <url>/2019/11/09/%E9%85%8D%E7%BD%AE%E7%BB%9F%E8%AE%A1%E6%95%B0%E6%8D%AE%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h1 id="hexo配置统计数据出现的问题-不蒜子"><a href="#hexo配置统计数据出现的问题-不蒜子" class="headerlink" title="hexo配置统计数据出现的问题-不蒜子"></a>hexo配置统计数据出现的问题-不蒜子</h1><br>
