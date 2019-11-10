@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>博客文章图片问题</title>
+    <url>/2019/11/10/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E5%9B%BE%E7%89%87%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>vue.js关于mvvm和mvc</title>
     <url>/2019/11/10/vue-js%E5%85%B3%E4%BA%8Emvvm%E5%92%8Cmvc/</url>
     <content><![CDATA[<h1 id="1-在看mvc和mvvm的区别之前我们来看一下前端的发展历史"><a href="#1-在看mvc和mvvm的区别之前我们来看一下前端的发展历史" class="headerlink" title="1.在看mvc和mvvm的区别之前我们来看一下前端的发展历史"></a>1.在看mvc和mvvm的区别之前我们来看一下前端的发展历史</h1><p>最早的HTML页面是完全静态的网页，它们是预先编写好的存放在Web服务器上的html文件。浏览器请求某个URL时，Web服务器把对应的html文件扔给浏览器，就可以显示html文件的内容了。</p>
@@ -20,7 +25,7 @@
 
 <h2 id="综合以上内容，实际上你应该可以通过面向对象的基本思想来推导出controller出现的原因：我们所有的App都是界面和数据的交互，所以需要类来进行界面的绘制，于是出现了View，需要类来管理数据于是出现了Model。我们设计的View应该能显示任意的内容比如页面中显示的文字应该是任意的而不只是某个特定Model的内容，所以我们不应该在View的实现中去写和Model相关的任何代码，如果这样做了，那么View的可扩展性就相当低了。而Model只是负责处理数据的，它根本不知道数据到时候会拿去干啥，可能拿去作为算法噼里啪啦去了，可能拿去显示给用户了，它既然无法接收用户的交互，它就不应该去管和视图相关的任何信息，所以Model中不应该写任何View相关代码。然而我们的数据和界面应该同步，也就是一定要有个地方要把Model的数据赋值给View，而Model内部和View的内部都不可能去写这样的代码，所以只能新创造一个类出来了，取名为Controller。"><a href="#综合以上内容，实际上你应该可以通过面向对象的基本思想来推导出controller出现的原因：我们所有的App都是界面和数据的交互，所以需要类来进行界面的绘制，于是出现了View，需要类来管理数据于是出现了Model。我们设计的View应该能显示任意的内容比如页面中显示的文字应该是任意的而不只是某个特定Model的内容，所以我们不应该在View的实现中去写和Model相关的任何代码，如果这样做了，那么View的可扩展性就相当低了。而Model只是负责处理数据的，它根本不知道数据到时候会拿去干啥，可能拿去作为算法噼里啪啦去了，可能拿去显示给用户了，它既然无法接收用户的交互，它就不应该去管和视图相关的任何信息，所以Model中不应该写任何View相关代码。然而我们的数据和界面应该同步，也就是一定要有个地方要把Model的数据赋值给View，而Model内部和View的内部都不可能去写这样的代码，所以只能新创造一个类出来了，取名为Controller。" class="headerlink" title="综合以上内容，实际上你应该可以通过面向对象的基本思想来推导出controller出现的原因：我们所有的App都是界面和数据的交互，所以需要类来进行界面的绘制，于是出现了View，需要类来管理数据于是出现了Model。我们设计的View应该能显示任意的内容比如页面中显示的文字应该是任意的而不只是某个特定Model的内容，所以我们不应该在View的实现中去写和Model相关的任何代码，如果这样做了，那么View的可扩展性就相当低了。而Model只是负责处理数据的，它根本不知道数据到时候会拿去干啥，可能拿去作为算法噼里啪啦去了，可能拿去显示给用户了，它既然无法接收用户的交互，它就不应该去管和视图相关的任何信息，所以Model中不应该写任何View相关代码。然而我们的数据和界面应该同步，也就是一定要有个地方要把Model的数据赋值给View，而Model内部和View的内部都不可能去写这样的代码，所以只能新创造一个类出来了，取名为Controller。"></a>综合以上内容，实际上你应该可以通过面向对象的基本思想来推导出controller出现的原因：我们所有的App都是界面和数据的交互，所以需要类来进行界面的绘制，于是出现了View，需要类来管理数据于是出现了Model。我们设计的View应该能显示任意的内容比如页面中显示的文字应该是任意的而不只是某个特定Model的内容，所以我们不应该在View的实现中去写和Model相关的任何代码，如果这样做了，那么View的可扩展性就相当低了。而Model只是负责处理数据的，它根本不知道数据到时候会拿去干啥，可能拿去作为算法噼里啪啦去了，可能拿去显示给用户了，它既然无法接收用户的交互，它就不应该去管和视图相关的任何信息，所以Model中不应该写任何View相关代码。然而我们的数据和界面应该同步，也就是一定要有个地方要把Model的数据赋值给View，而Model内部和View的内部都不可能去写这样的代码，所以只能新创造一个类出来了，取名为Controller。</h2><p>
 <img src="https://upload-images.jianshu.io/upload_images/7770244-f4fc955f1488299a.png?imageMogr2/auto-orient/strip|imageView2/2/w/1127/format/webp">
-]]></content>
+</p>]]></content>
   </entry>
   <entry>
     <title>配置统计数据出现的问题</title>
@@ -32,7 +37,7 @@
 修改NexT的配置的方法如下：
 <p>
 
-<p><code>&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></p>
+</p><p><code>&lt;script async src=&quot;https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></p>
 <p>修改为:</p>
 <p><code>&lt;script async src=&quot;https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;&lt;/script&gt;</code></p>
 <p>测试效果成功。</p>
